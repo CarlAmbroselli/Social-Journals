@@ -3,12 +3,12 @@
   <head>
   </head>
   <body>
-   <form action="api/addJournal.php" method="post">
-   Title: <input type="text" name="title"><br>
+   <form action="api/addJournal.php" method="post" enctype="multipart/form-data" >
+   Title: <input type="text" name="Title"><br>
    Description: <input type="text" name="Description"><br>
-   Who you where with: (fbids, comma seperated) <input type="text" name="With"><br>
-   Picture url: <input type="text" name="Picture">
-   
+   Picutre: <input name="Picture" type="file" id="Picture" size="50" />	<br>
+   <input name="me" type="hidden" value="1671622904" />		
+   <input type="submit" >
    </form>
   </body>
 </html>
