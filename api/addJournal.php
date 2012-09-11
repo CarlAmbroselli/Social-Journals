@@ -26,5 +26,5 @@ $path = str_replace("../img/", "", $path);
 mysql_query("INSERT INTO Journal (image, creator, title, description, timestamp) VALUES ('".$path."', '".$_POST["me"]."', '".$_POST["Title"]."', '".$_POST["Description"]."', '".time()."');");
 mysql_close($dbhandle);
 
-header('Location: ../addJournal.php?success=1');
+header('Location: ../views/add.php?success=1');
 ?>
