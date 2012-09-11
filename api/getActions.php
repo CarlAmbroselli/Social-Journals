@@ -40,8 +40,8 @@ if ($user) {
 
 // This call will always work since we are fetching public data.
 $feed = $facebook->api('/me/feed');
-
-?>
+print_r($feed);
+/*
 
 <!doctype html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
@@ -73,3 +73,7 @@ $feed = $facebook->api('/me/feed');
     <?php endif ?>
   </body>
 </html>
+
+*/
+
+?>
