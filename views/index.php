@@ -1,3 +1,11 @@
+<?php
+
+include("../api/dbconnect.php");
+
+$result = mysql_query("SELECT * FROM Journal WHERE creator = ".$fbid);
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,62 +18,31 @@
     <h1>Hi Max!</h1>
     
     <hr>
-    
     <ul>
-      <li class="journal">
-        <a href="http://google.com/">
-          <div class="meta">
+    <?php
+    
+    while($row = mysql_fetch_array($result))
+    {
+    echo '
+     
+      <li class="journal" onclick="window.location.href=\'journal.php?id='.$row["id"].'\'">
+           <div class="meta">
             <ul class="participants">
               <li><a href="#"><img src="img/max.jpg"></img></a></li>
               <li><a href="#"><img src="img/max.jpg"></img></a></li>
               <li><a href="#"><img src="img/max.jpg"></img></a></li>
             </ul>
             <div class="clearfix"></div>
-            <span class="title">Tokyo 2012</span>
+            <span class="title">'.$row["title"].'</span>
           </div>
           <ul class="stats">
             <li class="checkin">12 Check-Ins</li>
             <li class="status">177 Status-Messages</li>
             <li class="photos">12 Photos</li>
           </ul>
-        </a>
-      </li>
-      <li class="journal">
-        <a href="http://google.com/">
-          <div class="meta">
-            <ul class="participants">
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-            </ul>
-            <div class="clearfix"></div>
-            <span class="title">Tokyo 2012</span>
-          </div>
-          <ul class="stats">
-            <li class="checkin">12 Check-Ins</li>
-            <li class="status">177 Status-Messages</li>
-            <li class="photos">12 Photos</li>
-          </ul>
-        </a>
-      </li>
-      <li class="journal">
-        <a href="http://google.com/">
-          <div class="meta">
-            <ul class="participants">
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-              <li><a href="#"><img src="img/max.jpg"></img></a></li>
-            </ul>
-            <div class="clearfix"></div>
-            <span class="title">Tokyo 2012</span>
-          </div>
-          <ul class="stats">
-            <li class="checkin">12 Check-Ins</li>
-            <li class="status">177 Status-Messages</li>
-            <li class="photos">12 Photos</li>
-          </ul>
-        </a>
-      </li>
+      </li>';
+      }
+      ?>
     </ul>
   </body>
 </html>

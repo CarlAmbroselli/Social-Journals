@@ -23,7 +23,7 @@ copy($HTTP_POST_FILES['Picture']['tmp_name'], $path);
 $path = str_replace("../img/", "", $path);
 
 
-mysql_query("INSERT INTO Journal (image, creator, title, description, timestamp) VALUES ('".$path."', '".$_POST["me"]."', '".$_POST["Title"]."', '".$_POST["Description"]."', '".time()."');");
+mysql_query("INSERT INTO Journal (image, creator, title, description, timestamp) VALUES ('".$path."', '".$fbid."', '".$_POST["Title"]."', '".$_POST["Description"]."', '".time()."');");
 mysql_close($dbhandle);
 
 header('Location: ../views/add.php?success=1');

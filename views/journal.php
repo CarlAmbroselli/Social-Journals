@@ -1,3 +1,12 @@
+<?php
+
+include("../api/dbconnect.php");
+
+$result = mysql_query("SELECT * FROM Journal WHERE id = ".$_GET["id"]);
+$row = mysql_fetch_array($result);
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +26,7 @@
               <li><a href="#"><img src="img/max.jpg"></img></a></li>
             </ul>
             <div class="clearfix"></div>
-            <span class="title">Tokyo 2012</span>
+            <span class="title"><?php echo $row["title"]; ?></span>
           </div>
           <ul class="stats">
             <li class="checkin">12 Check-Ins</li>
@@ -27,7 +36,7 @@
         </a>
       </div>
       <div class="description">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p><?php echo $row["description"]; ?></p>
       </div>
   </body>
 </html>
