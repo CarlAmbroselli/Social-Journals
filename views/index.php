@@ -25,7 +25,8 @@ $result = mysql_query("SELECT * FROM Journal WHERE creator = ".$fbid);
     {
     echo '
      
-      <li class="journal" onclick="window.location.href=\'journal.php?id='.$row["id"].'\'">
+      <li class="journal" onclick="window.location.href=\'journal.php?id='.$row["id"].'\'" style="
+  background: url('."'img/gradient.png') repeat-x bottom, url('../img/".$row["image"]."'".') center center no-repeat;">
            <div class="meta">
             <ul class="participants">
               <li><a href="#"><img src="img/max.jpg"></img></a></li>
