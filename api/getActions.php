@@ -44,7 +44,7 @@ if (!$user){
 
 else{
 	$feed = $facebook->api('/me/feed');
-	print_r($feed);
+	echo json_encode($feed);
 }
 
 /*
