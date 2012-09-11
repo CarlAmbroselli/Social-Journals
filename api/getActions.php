@@ -38,9 +38,15 @@ if ($user) {
         );
 }
 
-// This call will always work since we are fetching public data.
-$feed = $facebook->api('/me/feed');
-print_r($feed);
+if (!$user){
+	echo '<a href="'.$loginUrl.'">Login with Facebook</a>';
+}
+
+else{
+	$feed = $facebook->api('/me/feed');
+	print_r($feed);
+}
+
 /*
 
 <!doctype html>
